@@ -7,6 +7,22 @@
 
 For robots, by robots, with a meat proxy in between.
 
+## Install from GitHub
+
+This repo is a shadcn registry. Release 1 is [`v0.1.0`](https://github.com/U-Louis/Lazy-meat-proxy-design-system/releases/tag/v0.1.0). From a project on the `base-luma` style:
+
+```bash
+npx shadcn@latest add U-Louis/Lazy-meat-proxy-design-system/button#v0.1.0
+```
+
+Install the theme and every component:
+
+```bash
+npx shadcn@latest add U-Louis/Lazy-meat-proxy-design-system/kit#v0.1.0
+```
+
+The color tokens alone are `U-Louis/Lazy-meat-proxy-design-system/theme#v0.1.0`.
+
 ## shadcn/ui monorepo template
 
 Uses Next.js monorepo template with shadcn/ui.
