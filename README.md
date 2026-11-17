@@ -1,3 +1,8 @@
+<p align="center">
+  <img alt="lazy meat proxy" width="320" src="assets/logo-light.svg#gh-light-mode-only">
+  <img alt="lazy meat proxy" width="320" src="assets/logo-dark.svg#gh-dark-mode-only">
+</p>
+
 # shadcn/ui monorepo template
 
 This is a Next.js monorepo template with shadcn/ui.
