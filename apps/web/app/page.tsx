@@ -1,19 +1,17 @@
-import { Button } from "@workspace/ui/components/button"
+import { Catalog } from "@/components/catalog"
 
 export default function Page() {
   return (
-    <div className="flex min-h-svh p-6">
-      <div className="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
-        <div>
-          <h1 className="font-medium">Project ready!</h1>
-          <p>You may now add components and start building.</p>
-          <p>We&apos;ve already added the button component for you.</p>
-          <Button className="mt-2">Button</Button>
-        </div>
-        <div className="text-muted-foreground font-mono text-xs">
-          (Press <kbd>d</kbd> to toggle dark mode)
-        </div>
-      </div>
-    </div>
+    <main className="mx-auto flex min-h-svh w-full max-w-3xl flex-col gap-10 p-6">
+      <header className="space-y-2">
+        <h1 className="text-2xl font-medium">Lazy meat proxy</h1>
+        <p className="text-muted-foreground text-sm leading-relaxed">
+          Installed components from <code>@workspace/ui</code>. Press <kbd>d</kbd>{" "}
+          to toggle dark mode.
+        </p>
+      </header>
+
+      <Catalog />
+    </main>
   )
 }
