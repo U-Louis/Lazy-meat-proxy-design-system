@@ -23,6 +23,8 @@ npx shadcn@latest add U-Louis/Lazy-meat-proxy-design-system/kit#v0.1.0
 
 The color tokens alone are `U-Louis/Lazy-meat-proxy-design-system/theme#v0.1.0`.
 
+Current `kit` also installs the typefaces `font-source-sans-3`, `font-fredoka`, and `font-geist-mono`. Those items are not in the `v0.1.0` tag.
+
 ## shadcn/ui monorepo template
 
 Uses Next.js monorepo template with shadcn/ui.

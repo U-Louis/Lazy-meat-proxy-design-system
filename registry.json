@@ -79,6 +79,50 @@
       }
     },
     {
+      "name": "font-source-sans-3",
+      "type": "registry:font",
+      "title": "Source Sans 3",
+      "description": "Body typeface.",
+      "font": {
+        "family": "'Source Sans 3 Variable', sans-serif",
+        "provider": "google",
+        "import": "Source_Sans_3",
+        "variable": "--font-sans",
+        "subsets": ["latin"],
+        "dependency": "@fontsource-variable/source-sans-3"
+      }
+    },
+    {
+      "name": "font-fredoka",
+      "type": "registry:font",
+      "title": "Fredoka",
+      "description": "Heading typeface.",
+      "font": {
+        "family": "'Fredoka Variable', sans-serif",
+        "provider": "google",
+        "import": "Fredoka",
+        "variable": "--font-heading",
+        "subsets": ["latin"],
+        "selector": "h1, h2, h3, h4, h5, h6",
+        "dependency": "@fontsource-variable/fredoka"
+      }
+    },
+    {
+      "name": "font-geist-mono",
+      "type": "registry:font",
+      "title": "Geist Mono",
+      "description": "Code typeface.",
+      "font": {
+        "family": "'Geist Mono Variable', monospace",
+        "provider": "google",
+        "import": "Geist_Mono",
+        "variable": "--font-mono",
+        "subsets": ["latin"],
+        "selector": "code, kbd, pre, samp",
+        "dependency": "@fontsource-variable/geist-mono"
+      }
+    },
+    {
       "name": "alert",
       "type": "registry:ui",
       "title": "Alert",
@@ -436,9 +480,12 @@
       "name": "kit",
       "type": "registry:item",
       "title": "Lazy meat proxy kit",
-      "description": "The theme and every component in this registry.",
+      "description": "The theme, the typefaces, and every component in this registry.",
       "registryDependencies": [
         "U-Louis/Lazy-meat-proxy-design-system/theme",
+        "U-Louis/Lazy-meat-proxy-design-system/font-source-sans-3",
+        "U-Louis/Lazy-meat-proxy-design-system/font-fredoka",
+        "U-Louis/Lazy-meat-proxy-design-system/font-geist-mono",
         "U-Louis/Lazy-meat-proxy-design-system/alert",
         "U-Louis/Lazy-meat-proxy-design-system/avatar",
         "U-Louis/Lazy-meat-proxy-design-system/badge",
