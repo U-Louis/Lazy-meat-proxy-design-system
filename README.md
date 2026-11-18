@@ -9,21 +9,21 @@ For robots, by robots, with a meat proxy in between.
 
 ## Install from GitHub
 
-This repo is a shadcn registry. Release 1 is [`v0.1.0`](https://github.com/U-Louis/Lazy-meat-proxy-design-system/releases/tag/v0.1.0). From a project on the `base-luma` style:
+This repo is a shadcn registry. The current release is [`v0.2.0`](https://github.com/U-Louis/Lazy-meat-proxy-design-system/releases/tag/v0.2.0). From a project on the `base-luma` style:
 
 ```bash
-npx shadcn@latest add U-Louis/Lazy-meat-proxy-design-system/button#v0.1.0
+npx shadcn@latest add U-Louis/Lazy-meat-proxy-design-system/button#v0.2.0
 ```
 
 Install the theme and every component:
 
 ```bash
-npx shadcn@latest add U-Louis/Lazy-meat-proxy-design-system/kit#v0.1.0
+npx shadcn@latest add U-Louis/Lazy-meat-proxy-design-system/kit#v0.2.0
 ```
 
-The color tokens alone are `U-Louis/Lazy-meat-proxy-design-system/theme#v0.1.0`.
+The color tokens alone are `U-Louis/Lazy-meat-proxy-design-system/theme#v0.2.0`.
 
-Current `kit` also installs the typefaces `font-source-sans-3`, `font-fredoka`, and `font-geist-mono`. Those items are not in the `v0.1.0` tag.
+`v0.2.0` adds the typefaces `font-source-sans-3`, `font-fredoka`, and `font-geist-mono` to `kit`. It also adds the kanban board copied from [ilinxa](https://ui.ilinxa.com/components/kanban-board). Import that from `@workspace/ui/components/kanban-board`. None of this is in the [`v0.1.0`](https://github.com/U-Louis/Lazy-meat-proxy-design-system/releases/tag/v0.1.0) tag.
 
 ## shadcn/ui monorepo template
 
@@ -87,6 +87,7 @@ Every UI component in the `base-luma` registry. Installed ones live in `packages
 | input-otp | | [docs](https://ui.shadcn.com/docs/components/base/input-otp) |
 | item | | [docs](https://ui.shadcn.com/docs/components/base/item) |
 | kbd | | [docs](https://ui.shadcn.com/docs/components/base/kbd) |
+| kanban-board | yes | [docs](https://ui.ilinxa.com/components/kanban-board) |
 | label | yes | [docs](https://ui.shadcn.com/docs/components/base/label) |
 | marker | | |
 | menubar | | [docs](https://ui.shadcn.com/docs/components/base/menubar) |
