@@ -68,6 +68,11 @@ import { Switch } from "@workspace/ui/components/switch"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@workspace/ui/components/tabs"
 import { Textarea } from "@workspace/ui/components/textarea"
 import {
+  KanbanBoard,
+  kanbanCardRenderer,
+  kanbanNoteRenderer,
+} from "@workspace/ui/components/kanban-board"
+import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
@@ -102,6 +107,7 @@ const installed = [
   "tooltip",
   "sonner",
   "tabs",
+  "kanban-board",
 ] as const
 
 function Section({
@@ -335,6 +341,63 @@ export function Catalog() {
         <Button variant="outline" onClick={() => toast("Saved")}>
           Show toast
         </Button>
+      </Section>
+
+      <Section
+        name="kanban-board"
+        note="Drag cards between columns. Copied from @ilinxa/kanban-board."
+      >
+        <div className="h-128 w-full min-w-full overflow-hidden rounded-md border">
+          <KanbanBoard
+            renderers={[kanbanCardRenderer, kanbanNoteRenderer]}
+            defaultData={{
+              columns: [
+                {
+                  id: "todo",
+                  title: "To do",
+                  items: [
+                    {
+                      id: "c1",
+                      rendererId: "kanban-card",
+                      data: {
+                        title: "Wire auth flow",
+                        description: "Validate against the staging identity provider.",
+                        tags: [{ label: "auth" }],
+                      },
+                    },
+                    {
+                      id: "n1",
+                      rendererId: "kanban-note",
+                      data: {
+                        title: "Reminder",
+                        body: "Coordinate with infra.",
+                      },
+                    },
+                  ],
+                },
+                {
+                  id: "doing",
+                  title: "In progress",
+                  color: "lime",
+                  items: [
+                    {
+                      id: "c2",
+                      rendererId: "kanban-card",
+                      data: { title: "Empty-state polish" },
+                    },
+                  ],
+                },
+                {
+                  id: "done",
+                  title: "Done",
+                  color: "emerald",
+                  items: [],
+                  allowReorder: false,
+                },
+              ],
+            }}
+          />
+        </div>
       </Section>
 
       <Section name="tabs">
