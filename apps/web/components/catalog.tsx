@@ -38,6 +38,7 @@ import {
 } from "@workspace/ui/components/field"
 import { Input } from "@workspace/ui/components/input"
 import { Label } from "@workspace/ui/components/label"
+import { MicButton } from "@workspace/ui/components/mic-button"
 import {
   Popover,
   PopoverContent,
@@ -96,6 +97,7 @@ const installed = [
   "input",
   "textarea",
   "label",
+  "mic-button",
   "field",
   "checkbox",
   "radio-group",
@@ -228,6 +230,11 @@ export function Catalog() {
           <Label htmlFor="display-name">Display name</Label>
           <Input id="display-name" placeholder="Ada" />
         </div>
+      </Section>
+
+      <Section name="mic-button" note="Click either one.">
+        <MicButton />
+        <MicButton defaultListening />
       </Section>
 
       <Section name="field">

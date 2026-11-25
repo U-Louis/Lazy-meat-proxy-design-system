@@ -9,19 +9,21 @@ For robots, by robots, with a meat proxy in between.
 
 ## Install from GitHub
 
-This repo is a shadcn registry. The current release is [`v0.2.0`](https://github.com/U-Louis/Lazy-meat-proxy-design-system/releases/tag/v0.2.0). From a project on the `base-luma` style:
+This repo is a shadcn registry. The current release is [`v0.3.0`](https://github.com/U-Louis/Lazy-meat-proxy-design-system/releases/tag/v0.3.0). From a project on the `base-luma` style:
 
 ```bash
-npx shadcn@latest add U-Louis/Lazy-meat-proxy-design-system/button#v0.2.0
+npx shadcn@latest add U-Louis/Lazy-meat-proxy-design-system/button#v0.3.0
 ```
 
 Install the theme and every component:
 
 ```bash
-npx shadcn@latest add U-Louis/Lazy-meat-proxy-design-system/kit#v0.2.0
+npx shadcn@latest add U-Louis/Lazy-meat-proxy-design-system/kit#v0.3.0
 ```
 
-The color tokens alone are `U-Louis/Lazy-meat-proxy-design-system/theme#v0.2.0`.
+The color tokens alone are `U-Louis/Lazy-meat-proxy-design-system/theme#v0.3.0`.
+
+`v0.3.0` adds `scroll-area` and `mic-button`, and publishes the kanban board. The board and its columns scroll with `ScrollArea`.
 
 `v0.2.0` adds the typefaces `font-source-sans-3`, `font-fredoka`, and `font-geist-mono` to `kit`. It also adds the kanban board copied from [ilinxa](https://ui.ilinxa.com/components/kanban-board). Import that from `@workspace/ui/components/kanban-board`. None of this is in the [`v0.1.0`](https://github.com/U-Louis/Lazy-meat-proxy-design-system/releases/tag/v0.1.0) tag.
 
@@ -93,6 +95,7 @@ Every UI component in the `base-luma` registry. Installed ones live in `packages
 | menubar | | [docs](https://ui.shadcn.com/docs/components/base/menubar) |
 | message | | |
 | message-scroller | | |
+| mic-button | yes | |
 | native-select | | [docs](https://ui.shadcn.com/docs/components/base/native-select) |
 | navigation-menu | | [docs](https://ui.shadcn.com/docs/components/base/navigation-menu) |
 | pagination | | [docs](https://ui.shadcn.com/docs/components/base/pagination) |

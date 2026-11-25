@@ -474,6 +474,19 @@
       ]
     },
     {
+      "name": "mic-button",
+      "type": "registry:ui",
+      "title": "Mic Button",
+      "description": "A speak button that shows a listening wave.",
+      "files": [
+        {
+          "path": "packages/ui/src/components/mic-button.tsx",
+          "type": "registry:ui",
+          "target": "@ui/mic-button.tsx"
+        }
+      ]
+    },
+    {
       "name": "popover",
       "type": "registry:ui",
       "title": "Popover",
@@ -682,6 +695,7 @@
         "U-Louis/Lazy-meat-proxy-design-system/input",
         "U-Louis/Lazy-meat-proxy-design-system/kanban-board",
         "U-Louis/Lazy-meat-proxy-design-system/label",
+        "U-Louis/Lazy-meat-proxy-design-system/mic-button",
         "U-Louis/Lazy-meat-proxy-design-system/popover",
         "U-Louis/Lazy-meat-proxy-design-system/radio-group",
         "U-Louis/Lazy-meat-proxy-design-system/scroll-area",
