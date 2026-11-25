@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { SortableContext, horizontalListSortingStrategy } from "@dnd-kit/sortable";
+import { ScrollArea } from "@workspace/ui/components/scroll-area";
 import { cn } from "@workspace/ui/lib/utils";
 import type {
   AnyKanbanCardRenderer,
@@ -60,8 +61,9 @@ export function Board({
   // a passive listener can't preventDefault to stop the page also scrolling.
   const scrollRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    const el = scrollRef.current;
-    if (!el) return;
+    const root = scrollRef.current;
+    const el = root?.querySelector<HTMLElement>("[data-slot=scroll-area-viewport]");
+    if (!root || !el) return;
     const onWheel = (e: WheelEvent) => {
       if (e.deltaY === 0 || e.shiftKey) return; // shift+wheel already scrolls X
       if (el.scrollWidth <= el.clientWidth) return; // nothing to scroll horizontally
@@ -78,45 +80,41 @@ export function Board({
       el.scrollLeft += e.deltaY;
       e.preventDefault();
     };
-    el.addEventListener("wheel", onWheel, { passive: false });
-    return () => el.removeEventListener("wheel", onWheel);
+    root.addEventListener("wheel", onWheel, { passive: false });
+    return () => root.removeEventListener("wheel", onWheel);
   }, []);
 
   return (
-    <div
-      ref={scrollRef}
-      className={cn(
-        "flex h-full min-h-0 w-full gap-3 overflow-x-auto overflow-y-hidden p-3",
-        className,
-      )}
-    >
-      <SortableContext
-        items={data.columns.map((c) => c.id)}
-        strategy={horizontalListSortingStrategy}
-      >
-        {data.columns.map((column) => (
-          <Column
-            key={column.id}
-            column={column}
-            swimlanes={swimlanes}
-            rendererMap={rendererMap}
-            renderers={renderers}
-            palette={palette}
-            readOnly={readOnly}
-            activeRendererId={activeRendererId}
-            onItemCreate={onItemCreate ? (item) => onItemCreate(column.id, item) : undefined}
-            onItemUpdate={onItemUpdate}
-            onItemDelete={onItemDelete}
-            onItemClick={onItemClick}
-            onItemDataChange={onItemDataChange}
-            onColumnUpdate={onColumnUpdate}
-            onColumnDelete={onColumnDelete}
-            onSetColor={(color) => onSetColor(column.id, color)}
-            onToggleCollapse={() => onToggleCollapse(column.id)}
-          />
-        ))}
-      </SortableContext>
-      {!readOnly && onColumnCreate ? <AddColumnButton onCreate={onColumnCreate} /> : null}
-    </div>
+    <ScrollArea ref={scrollRef} className={cn("h-full min-h-0 w-full", className)}>
+      <div className="flex h-full w-max min-w-full gap-3 p-3">
+        <SortableContext
+          items={data.columns.map((c) => c.id)}
+          strategy={horizontalListSortingStrategy}
+        >
+          {data.columns.map((column) => (
+            <Column
+              key={column.id}
+              column={column}
+              swimlanes={swimlanes}
+              rendererMap={rendererMap}
+              renderers={renderers}
+              palette={palette}
+              readOnly={readOnly}
+              activeRendererId={activeRendererId}
+              onItemCreate={onItemCreate ? (item) => onItemCreate(column.id, item) : undefined}
+              onItemUpdate={onItemUpdate}
+              onItemDelete={onItemDelete}
+              onItemClick={onItemClick}
+              onItemDataChange={onItemDataChange}
+              onColumnUpdate={onColumnUpdate}
+              onColumnDelete={onColumnDelete}
+              onSetColor={(color) => onSetColor(column.id, color)}
+              onToggleCollapse={() => onToggleCollapse(column.id)}
+            />
+          ))}
+        </SortableContext>
+        {!readOnly && onColumnCreate ? <AddColumnButton onCreate={onColumnCreate} /> : null}
+      </div>
+    </ScrollArea>
   );
 }

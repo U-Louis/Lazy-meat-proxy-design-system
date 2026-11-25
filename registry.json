@@ -290,6 +290,176 @@
       ]
     },
     {
+      "name": "kanban-board",
+      "type": "registry:ui",
+      "title": "Kanban Board",
+      "description": "A column board copied from ilinxa, with overlay scrollbars.",
+      "dependencies": [
+        "@dnd-kit/core@^6.3.1",
+        "@dnd-kit/sortable@^10.0.0",
+        "@dnd-kit/utilities@^3.2.2",
+        "cn@^0.5.2",
+        "lucide-react@^1.74.0"
+      ],
+      "registryDependencies": [
+        "U-Louis/Lazy-meat-proxy-design-system/avatar",
+        "U-Louis/Lazy-meat-proxy-design-system/badge",
+        "U-Louis/Lazy-meat-proxy-design-system/button",
+        "U-Louis/Lazy-meat-proxy-design-system/dropdown-menu",
+        "U-Louis/Lazy-meat-proxy-design-system/input",
+        "U-Louis/Lazy-meat-proxy-design-system/popover",
+        "U-Louis/Lazy-meat-proxy-design-system/scroll-area",
+        "U-Louis/Lazy-meat-proxy-design-system/textarea"
+      ],
+      "files": [
+        {
+          "path": "packages/ui/src/components/kanban-board/index.ts",
+          "type": "registry:file",
+          "target": "@ui/kanban-board/index.ts"
+        },
+        {
+          "path": "packages/ui/src/components/kanban-board/kanban-board.tsx",
+          "type": "registry:file",
+          "target": "@ui/kanban-board/kanban-board.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/kanban-board/types.ts",
+          "type": "registry:file",
+          "target": "@ui/kanban-board/types.ts"
+        },
+        {
+          "path": "packages/ui/src/components/kanban-board/hooks/use-drag-handlers.ts",
+          "type": "registry:file",
+          "target": "@ui/kanban-board/hooks/use-drag-handlers.ts"
+        },
+        {
+          "path": "packages/ui/src/components/kanban-board/hooks/use-kanban-state.ts",
+          "type": "registry:file",
+          "target": "@ui/kanban-board/hooks/use-kanban-state.ts"
+        },
+        {
+          "path": "packages/ui/src/components/kanban-board/hooks/use-renderer-map.ts",
+          "type": "registry:file",
+          "target": "@ui/kanban-board/hooks/use-renderer-map.ts"
+        },
+        {
+          "path": "packages/ui/src/components/kanban-board/lib/data.ts",
+          "type": "registry:file",
+          "target": "@ui/kanban-board/lib/data.ts"
+        },
+        {
+          "path": "packages/ui/src/components/kanban-board/lib/ids.ts",
+          "type": "registry:file",
+          "target": "@ui/kanban-board/lib/ids.ts"
+        },
+        {
+          "path": "packages/ui/src/components/kanban-board/lib/palette.ts",
+          "type": "registry:file",
+          "target": "@ui/kanban-board/lib/palette.ts"
+        },
+        {
+          "path": "packages/ui/src/components/kanban-board/lib/permissions.ts",
+          "type": "registry:file",
+          "target": "@ui/kanban-board/lib/permissions.ts"
+        },
+        {
+          "path": "packages/ui/src/components/kanban-board/lib/reducer.ts",
+          "type": "registry:file",
+          "target": "@ui/kanban-board/lib/reducer.ts"
+        },
+        {
+          "path": "packages/ui/src/components/kanban-board/parts/add-column-button.tsx",
+          "type": "registry:file",
+          "target": "@ui/kanban-board/parts/add-column-button.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/kanban-board/parts/board.tsx",
+          "type": "registry:file",
+          "target": "@ui/kanban-board/parts/board.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/kanban-board/parts/color-picker.tsx",
+          "type": "registry:file",
+          "target": "@ui/kanban-board/parts/color-picker.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/kanban-board/parts/column-body.tsx",
+          "type": "registry:file",
+          "target": "@ui/kanban-board/parts/column-body.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/kanban-board/parts/column-collapsed.tsx",
+          "type": "registry:file",
+          "target": "@ui/kanban-board/parts/column-collapsed.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/kanban-board/parts/column-footer.tsx",
+          "type": "registry:file",
+          "target": "@ui/kanban-board/parts/column-footer.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/kanban-board/parts/column-header.tsx",
+          "type": "registry:file",
+          "target": "@ui/kanban-board/parts/column-header.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/kanban-board/parts/column.tsx",
+          "type": "registry:file",
+          "target": "@ui/kanban-board/parts/column.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/kanban-board/parts/drag-overlay.tsx",
+          "type": "registry:file",
+          "target": "@ui/kanban-board/parts/drag-overlay.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/kanban-board/parts/inline-create-editor.tsx",
+          "type": "registry:file",
+          "target": "@ui/kanban-board/parts/inline-create-editor.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/kanban-board/parts/inline-edit-editor.tsx",
+          "type": "registry:file",
+          "target": "@ui/kanban-board/parts/inline-edit-editor.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/kanban-board/parts/item-renderer.tsx",
+          "type": "registry:file",
+          "target": "@ui/kanban-board/parts/item-renderer.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/kanban-board/parts/item-shell.tsx",
+          "type": "registry:file",
+          "target": "@ui/kanban-board/parts/item-shell.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/kanban-board/parts/kanban-card.tsx",
+          "type": "registry:file",
+          "target": "@ui/kanban-board/parts/kanban-card.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/kanban-board/parts/kanban-note.tsx",
+          "type": "registry:file",
+          "target": "@ui/kanban-board/parts/kanban-note.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/kanban-board/parts/missing-renderer.tsx",
+          "type": "registry:file",
+          "target": "@ui/kanban-board/parts/missing-renderer.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/kanban-board/parts/swimlane-cell.tsx",
+          "type": "registry:file",
+          "target": "@ui/kanban-board/parts/swimlane-cell.tsx"
+        },
+        {
+          "path": "packages/ui/src/components/kanban-board/parts/swimlane-row.tsx",
+          "type": "registry:file",
+          "target": "@ui/kanban-board/parts/swimlane-row.tsx"
+        }
+      ]
+    },
+    {
       "name": "label",
       "type": "registry:ui",
       "title": "Label",
@@ -510,6 +680,7 @@
         "U-Louis/Lazy-meat-proxy-design-system/dropdown-menu",
         "U-Louis/Lazy-meat-proxy-design-system/field",
         "U-Louis/Lazy-meat-proxy-design-system/input",
+        "U-Louis/Lazy-meat-proxy-design-system/kanban-board",
         "U-Louis/Lazy-meat-proxy-design-system/label",
         "U-Louis/Lazy-meat-proxy-design-system/popover",
         "U-Louis/Lazy-meat-proxy-design-system/radio-group",
