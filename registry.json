@@ -332,6 +332,20 @@
       ]
     },
     {
+      "name": "scroll-area",
+      "type": "registry:ui",
+      "title": "Scroll Area",
+      "description": "Overlay scrollbars for a region that overflows.",
+      "dependencies": ["@base-ui/react@^1.9.0", "cn@^0.5.2"],
+      "files": [
+        {
+          "path": "packages/ui/src/components/scroll-area.tsx",
+          "type": "registry:ui",
+          "target": "@ui/scroll-area.tsx"
+        }
+      ]
+    },
+    {
       "name": "select",
       "type": "registry:ui",
       "title": "Select",
@@ -499,6 +513,7 @@
         "U-Louis/Lazy-meat-proxy-design-system/label",
         "U-Louis/Lazy-meat-proxy-design-system/popover",
         "U-Louis/Lazy-meat-proxy-design-system/radio-group",
+        "U-Louis/Lazy-meat-proxy-design-system/scroll-area",
         "U-Louis/Lazy-meat-proxy-design-system/select",
         "U-Louis/Lazy-meat-proxy-design-system/separator",
         "U-Louis/Lazy-meat-proxy-design-system/sheet",

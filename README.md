@@ -101,7 +101,7 @@ Every UI component in the `base-luma` registry. Installed ones live in `packages
 | questionnaire | | [docs](https://ui.shadcn.com/docs/components/base/questionnaire) |
 | radio-group | yes | [docs](https://ui.shadcn.com/docs/components/base/radio-group) |
 | resizable | | [docs](https://ui.shadcn.com/docs/components/base/resizable) |
-| scroll-area | | [docs](https://ui.shadcn.com/docs/components/base/scroll-area) |
+| scroll-area | yes | [docs](https://ui.shadcn.com/docs/components/base/scroll-area) |
 | select | yes | [docs](https://ui.shadcn.com/docs/components/base/select) |
 | separator | yes | [docs](https://ui.shadcn.com/docs/components/base/separator) |
 | sheet | yes | [docs](https://ui.shadcn.com/docs/components/base/sheet) |

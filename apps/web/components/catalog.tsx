@@ -54,6 +54,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@workspace/ui/components/select"
+import { ScrollArea } from "@workspace/ui/components/scroll-area"
 import { Separator } from "@workspace/ui/components/separator"
 import {
   Sheet,
@@ -88,6 +89,7 @@ const installed = [
   "button",
   "badge",
   "separator",
+  "scroll-area",
   "avatar",
   "skeleton",
   "card",
@@ -170,6 +172,18 @@ export function Catalog() {
           <Separator className="flex-1" />
           <span>Right</span>
         </div>
+      </Section>
+
+      <Section name="scroll-area" note="Overlay bars on both axes.">
+        <ScrollArea className="h-36 w-64 rounded-md border">
+          <div className="w-max space-y-2 p-3 text-sm">
+            {Array.from({ length: 8 }, (_, index) => (
+              <p key={index} className="whitespace-nowrap">
+                Row {index + 1} runs past the edge of the frame.
+              </p>
+            ))}
+          </div>
+        </ScrollArea>
       </Section>
 
       <Section name="avatar">
