@@ -232,9 +232,10 @@ export function Catalog() {
         </div>
       </Section>
 
-      <Section name="mic-button" note="Click either one.">
+      <Section name="mic-button" note="The caption keeps two lines, so the circle stays put.">
         <MicButton />
         <MicButton defaultListening />
+        <MicButton errorCaption="The microphone is unavailable." />
       </Section>
 
       <Section name="field">

@@ -9,19 +9,21 @@ For robots, by robots, with a meat proxy in between.
 
 ## Install from GitHub
 
-This repo is a shadcn registry. The current release is [`v0.3.0`](https://github.com/U-Louis/Lazy-meat-proxy-design-system/releases/tag/v0.3.0). From a project on the `base-luma` style:
+This repo is a shadcn registry. The current release is [`v0.3.1`](https://github.com/U-Louis/Lazy-meat-proxy-design-system/releases/tag/v0.3.1). From a project on the `base-luma` style:
 
 ```bash
-npx shadcn@latest add U-Louis/Lazy-meat-proxy-design-system/button#v0.3.0
+npx shadcn@latest add U-Louis/Lazy-meat-proxy-design-system/button#v0.3.1
 ```
 
 Install the theme and every component:
 
 ```bash
-npx shadcn@latest add U-Louis/Lazy-meat-proxy-design-system/kit#v0.3.0
+npx shadcn@latest add U-Louis/Lazy-meat-proxy-design-system/kit#v0.3.1
 ```
 
-The color tokens alone are `U-Louis/Lazy-meat-proxy-design-system/theme#v0.3.0`.
+The color tokens alone are `U-Louis/Lazy-meat-proxy-design-system/theme#v0.3.1`.
+
+`v0.3.1` lets `mic-button` show an error caption without moving the circle.
 
 `v0.3.0` adds `scroll-area` and `mic-button`, and publishes the kanban board. The board and its columns scroll with `ScrollArea`.
 

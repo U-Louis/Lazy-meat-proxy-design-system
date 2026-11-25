@@ -12,10 +12,13 @@ const pills = [
 
 export function MicButton({
   defaultListening = false,
+  errorCaption,
 }: {
   defaultListening?: boolean
+  errorCaption?: string
 }) {
   const [listening, setListening] = useState(defaultListening)
+  const showingError = !listening && Boolean(errorCaption)
 
   return (
     <div className="flex flex-col items-center">
@@ -56,8 +59,10 @@ export function MicButton({
       </button>
         <style>{micStyles}</style>
       </div>
-      <span className="text-muted-foreground -mt-1 text-xs">
-        {listening ? "Listening" : "Off"}
+      <span
+        className={`-mt-1 flex h-8 w-44 items-start justify-center text-center text-xs leading-4 ${showingError ? "text-destructive" : "text-muted-foreground"}`}
+      >
+        {showingError ? errorCaption : listening ? "Listening" : "Off"}
       </span>
     </div>
   )
