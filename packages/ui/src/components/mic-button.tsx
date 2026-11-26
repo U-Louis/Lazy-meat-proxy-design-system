@@ -39,7 +39,7 @@ export function MicButton({
         }
         disabled={loading}
         onClick={() => setListening((on) => !on)}
-        className="relative z-1 grid size-28 place-items-center overflow-hidden rounded-full bg-primary text-primary-foreground shadow-[0_14px_32px_-16px_var(--primary)] transition-transform outline-none focus-visible:ring-3 focus-visible:ring-ring/40 active:scale-95"
+        className="relative z-1 grid size-28 cursor-pointer place-items-center overflow-hidden rounded-full bg-primary text-primary-foreground shadow-[0_14px_32px_-16px_var(--primary)] transition-transform outline-none focus-visible:ring-3 focus-visible:ring-ring/40 active:scale-95 disabled:cursor-default"
       >
         <span
           className={`font-heading text-lg tracking-wide transition-opacity duration-200 ${listening || loading ? "opacity-0" : "opacity-100"}`}
