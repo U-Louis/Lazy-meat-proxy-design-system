@@ -12,36 +12,42 @@ const pills = [
 
 export function MicButton({
   defaultListening = false,
+  loading = false,
   errorCaption,
 }: {
   defaultListening?: boolean
+  loading?: boolean
   errorCaption?: string
 }) {
   const [listening, setListening] = useState(defaultListening)
-  const showingError = !listening && Boolean(errorCaption)
+  const showingError = !loading && !listening && Boolean(errorCaption)
 
   return (
     <div className="flex flex-col items-center">
       <div
         className="mic-try relative grid size-44 place-items-center"
-        data-listening={listening ? "" : undefined}
+        data-listening={listening && !loading ? "" : undefined}
       >
       <span className="mic-try-wave" aria-hidden />
       <span className="mic-try-wave mic-try-wave-late" aria-hidden />
       <button
         type="button"
         aria-pressed={listening}
-        aria-label={listening ? "Stop listening" : "Start listening"}
+        aria-busy={loading || undefined}
+        aria-label={
+          loading ? "Loading" : listening ? "Stop listening" : "Start listening"
+        }
+        disabled={loading}
         onClick={() => setListening((on) => !on)}
         className="relative z-1 grid size-28 place-items-center overflow-hidden rounded-full bg-primary text-primary-foreground shadow-[0_14px_32px_-16px_var(--primary)] transition-transform outline-none focus-visible:ring-3 focus-visible:ring-ring/40 active:scale-95"
       >
         <span
-          className={`font-heading text-lg tracking-wide transition-opacity duration-200 ${listening ? "opacity-0" : "opacity-100"}`}
+          className={`font-heading text-lg tracking-wide transition-opacity duration-200 ${listening || loading ? "opacity-0" : "opacity-100"}`}
         >
           Speak
         </span>
         <span
-          className={`absolute flex h-9 items-center gap-[5px] transition-opacity duration-200 ${listening ? "opacity-100" : "opacity-0"}`}
+          className={`absolute flex h-9 items-center gap-[5px] transition-opacity duration-200 ${listening && !loading ? "opacity-100" : "opacity-0"}`}
           aria-hidden
         >
           {pills.map((pill) => (
@@ -56,13 +62,23 @@ export function MicButton({
             />
           ))}
         </span>
+        <span
+          className={`mic-try-spinner absolute ${loading ? "opacity-100" : "opacity-0"}`}
+          aria-hidden
+        />
       </button>
         <style>{micStyles}</style>
       </div>
       <span
         className={`-mt-1 flex h-8 w-44 items-start justify-center text-center text-xs leading-4 ${showingError ? "text-destructive" : "text-muted-foreground"}`}
       >
-        {showingError ? errorCaption : listening ? "Listening" : "Off"}
+        {showingError
+          ? errorCaption
+          : loading
+            ? "Loading"
+            : listening
+              ? "Listening"
+              : "Off"}
       </span>
     </div>
   )
@@ -89,6 +105,18 @@ const micStyles = `
   0% { transform: scale(1); opacity: 0.9; }
   100% { transform: scale(1.55); opacity: 0; }
 }
+.mic-try-spinner {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 9999px;
+  border: 3px solid color-mix(in oklch, currentColor 30%, transparent);
+  border-top-color: currentColor;
+  animation: mic-try-spin 0.7s linear infinite;
+  pointer-events: none;
+}
+@keyframes mic-try-spin {
+  to { transform: rotate(360deg); }
+}
 .mic-try-pill {
   width: 5px;
   height: 10px;
@@ -114,6 +142,9 @@ const micStyles = `
   .mic-try[data-listening] .mic-try-pill {
     animation: none;
     height: calc(var(--peak) * 36px);
+  }
+  .mic-try-spinner {
+    animation: none;
   }
 }
 `

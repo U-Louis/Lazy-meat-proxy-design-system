@@ -236,6 +236,7 @@ export function Catalog() {
         <MicButton />
         <MicButton defaultListening />
         <MicButton errorCaption="The microphone is unavailable." />
+        <MicButton loading />
       </Section>
 
       <Section name="field">
